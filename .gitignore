@@ -1,0 +1,9 @@
+/data
+/runs
+Dockerfile
+requirements.txt
+testing.py
+train.py
+/.idea
+/__pycache__
+/static
