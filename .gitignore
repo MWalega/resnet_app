@@ -7,3 +7,4 @@ train.py
 /.idea
 /__pycache__
 /static
+resnet.py
