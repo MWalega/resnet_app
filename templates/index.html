@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My ResNet18 trained on CIFAR10</title>
+    <title>Pretrained ResNet18</title>
 
     <!-- Bootstrap core CSS -->
 <link href="/static/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -40,14 +40,17 @@
 
 <main class="form-upload">
   <form method=post enctype=multipart/form-data>
-    <h1 class="h3 mb-3 fw-normal">Please upload image</h1>
+    <h1 class="h3 mb-3 fw-bold">Please upload image</h1>
     <input type="file" id="image" name="image" class="form-control" required autofocus>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Predict</button>
     <br>
     {% if image_name %}
       <br>
-      <img class="mb-4" src="static/{{image_name}}" alt="" width="320" height="320">
-      <h3 class="h3 mb-3 fw-normal">Prediction: {{prediction}}</h3>
+      <img class="mb-3" src="static/{{image_name}}" alt="" width="320" height="320">
+      <h3 class="h5 mb-1 fw-bold">Top 5 probabilities:</h3>
+      <h6 class="h5 mb-1 fw-normal">{{prediction[0]}}</h6>
+      <h6 class="h5 mb-1 fw-normal">{{prediction[1]}}</h6>
+      <h6 class="h5 mb-1 fw-normal">{{prediction[2]}}</h6>
     {% endif %}
   </form>
 </main>
